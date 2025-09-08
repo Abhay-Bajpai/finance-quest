@@ -1,30 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-bg-dark text-gray-200 font-orb-bit;
+  @apply bg-gradient-dark text-gray-100 font-orb-bit;
   margin: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
-  background-size: 20px 20px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  position: relative;
 }
 
-/* Custom scrollbar for a better theme fit */
+/* Animated background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(0, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 0, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 0, 0.3), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(0, 255, 65, 0.3), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(181, 55, 247, 0.3), transparent);
+  background-size: 200px 200px;
+  animation: particle-float 20s linear infinite;
+  z-index: -1;
+}
+
+/* Cyberpunk grid overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Enhanced scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a102c;
+  background: #0a0015;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #5a3a8a;
-  border-radius: 4px;
+  background: linear-gradient(45deg, #b537f7, #00ffff);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(181, 55, 247, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9f7aea;
+  background: linear-gradient(45deg, #ff0080, #00ffff);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.8);
+}
+
+/* Global text glow effects */
+.text-glow-cyan {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+.text-glow-purple {
+  color: #b537f7;
+  text-shadow: 0 0 10px #b537f7, 0 0 20px #b537f7, 0 0 30px #b537f7;
+}
+
+.text-glow-pink {
+  color: #ff0080;
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+}
+
+.text-glow-green {
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+}
+
+/* Holographic text effect */
+.text-holographic {
+  background: linear-gradient(45deg, #00ffff, #ff0080, #00ff41, #ffff00);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-particle 8s ease-in-out infinite;
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+  33% { transform: translateY(-100px) rotate(120deg); opacity: 1; }
+  66% { transform: translateY(-50px) rotate(240deg); opacity: 0.5; }
+}
+
+/* Neon borders */
+.border-neon {
+  border: 2px solid #00ffff;
+  box-shadow: 
+    0 0 5px #00ffff,
+    inset 0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    inset 0 0 10px #00ffff;
+}
+
+.border-neon-purple {
+  border: 2px solid #b537f7;
+  box-shadow: 
+    0 0 5px #b537f7,
+    inset 0 0 5px #b537f7,
+    0 0 10px #b537f7,
+    inset 0 0 10px #b537f7;
+}
+
+/* Cyberpunk buttons */
+.btn-cyber {
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-cyber:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-cyber:hover::before {
+  left: 100%;
 }
