@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bg-dark text-gray-200 font-orb-bit;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Custom scrollbar for a better theme fit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a102c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5a3a8a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9f7aea;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8fafc;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #1d4ed8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1d4ed8;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #2563eb;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 20px;
+    border-radius: 5px;
+    background-color: #1d4ed8;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.navbar {
+    background-color: #1d4ed8;
+    color: white;
+    padding: 10px 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f5f9;
+}
