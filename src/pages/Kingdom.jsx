@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 import KingdomCard from '../components/KingdomCard';
 import ProgressBar from '../components/ProgressBar';
-import { useFinanceContext } from '../context/FinanceContext';
+import { useFinance, useFinanceContext } from '../context/FinanceContext';
 
 // Mock expense data for the chart
 const mockExpenses = [
