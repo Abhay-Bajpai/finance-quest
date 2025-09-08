@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useFinance } from '../context/FinanceContext';
-import Navbar from '../components/Navbar';
 import ProgressBar from '../components/ProgressBar';
 import KingdomCard from '../components/KingdomCard';
 import Garden from '../components/Garden';
@@ -26,8 +25,6 @@ const Dashboard = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <Navbar />
-      
       {/* Player Stats Section */}
       <motion.div 
         className="bg-bg-light/80 p-6 rounded-lg border border-primary/20"
