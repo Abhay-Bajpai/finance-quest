@@ -1,9 +1,10 @@
-import React from 'react';
-import { useFinance } from '../context/FinanceContext';
-import GoalCard from '../components/GoalCard';
-import { motion } from 'framer-motion';
+{mport React from 'react';
+  "rewrites": [ance } from '../context/FinanceContext';
+    { "source": "/(.*)", "destination": "/" };
+  ],ort { motion } from 'framer-motion';
+  "build": "vite build"
 
-const Goals = () => {
+}const Goals = () => {
   const { goals } = useFinance();
 
   const containerVariants = {
